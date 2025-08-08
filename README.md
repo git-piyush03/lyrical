@@ -1,69 +1,99 @@
-# React + TypeScript + Vite
+# Lyrical 🎶  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Lyrical is an innovative web application built with Flutter that generates lyrics based on user preferences using the powerful Gemini API. Whether you're a songwriter, poet, or just someone looking for fun, Lyrical helps you create custom lyrics tailored to your input.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+1. [Features](#features)
+2. [Modules and Working](#modules-and-working)
+    * [User Input and Preferences](#user-input-and-preferences)
+    * [Lyrics Generation](#lyrics-generation)
+    * [Lyrics Refinement](#lyrics-refinement)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [API Server](#api-server)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Custom Lyrics Generation**: Generate personalized lyrics by providing your preferences (e.g., theme, mood, or style).  
+- **Real-Time Processing**: Experience quick lyric generation with minimal wait times.  
+- **Responsive Design**: Enjoy seamless functionality across mobile, desktop, and web platforms.  
+- **User-Friendly Interface**: Navigate effortlessly with a design built for beginners and experts alike.  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Modules and Working  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### User Input and Preferences  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Users provide inputs such as mood, style, or theme for lyrics generation.  
+- The application validates user preferences to ensure a smooth experience.  
+
+### Lyrics Generation  
+
+- Inputs are processed using the Gemini API to create unique lyrics.  
+- The results are displayed in an easy-to-read format, allowing users to refine their input and regenerate if needed.  
+
+### Lyrics Refinement  
+
+- Not satisfied with the first 3 versions? Click "Refine Lyrics" to generate more variations.  
+- The results are displayed in an easy-to-read format, keeping ease of use as a primary concern.  
+
+---
+
+## Installation  
+
+1. **Clone the Repository**:  
+
+    ```bash
+    git clone https://github.com/git-piyush03/lyrical
+    cd lyrical
+    ```
+
+2. **Install Dependencies**:  
+
+  Requirements: Node 18+ (or 20+), npm
+  Install deps:
+    ```bash
+    npm install
+    ```
+3.  Create .env (do not commit)
+    ```bash
+    GEMINI_API_KEY=your_google_gemini_api_key
+    # Optional for local server
+    PORT=5174
+    ```
+4.  Start the API (local):
+    ```bash
+    npm run dev:server
+    ```
+5.  **Start the web app:**
+    ```bash
+  npm run dev
+    ```
+6.  Open: http://localhost:5173
+    ```bash
+    flutter pub get
+    ```
+---
+
+## Usage  
+
+1. **Run the Application**:  
+
+2. **Interact with the App**:  
+
+    - Enter preferences like mood, style, or theme.  
+    - Click "Generate Lyrics" to create custom lyrics.  
+    - Click "Refine Lyrics" to refine the existing generated lyrics.  
+
+---
+
+## API Server  
+
+The Flask server handling API requests for Lyrical is hosted on **Vercel**.  
+This server communicates with the Gemini API to process user inputs and return generated lyrics.  
