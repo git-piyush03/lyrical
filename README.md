@@ -87,8 +87,25 @@ Lyrical is an innovative web application built with Flutter that generates lyric
 
     - Enter preferences like mood, style, or theme.  
     - Click "Generate Lyrics" to create custom lyrics.  
-    - Click "Refine Lyrics" to refine the existing generated lyrics.  
+    - Click "Refine Lyrics" to refine the existing generated lyrics.
+      
+3. **API (local)**
 
+    - Generate
+         ```bash
+          curl -X POST http://localhost:5174/api/generate \
+         -H "Content-Type: application/json" \
+         -d '{"prompt":"Return ONLY {\"versions\": [\"v1\",\"v2\",\"v3\"]} about a hopeful pop song."}'
+         ```
+   - Refine
+      ```bash
+       curl -X POST http://localhost:5174/api/refine \
+      -H "Content-Type: application/json" \
+      -d '{"prompt":"Return ONLY {\"lyrics\":\"refined\"} improving these lyrics: ..."}'
+      ```
+4. **Build (production):**
+      - npm run build
+      - Preview locally: npm run preview
 ---
 
 ## API Server  
