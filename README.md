@@ -48,19 +48,19 @@ Lyrical is an innovative web application built with Flutter that generates lyric
 ## Installation  
 
 1. **Clone the Repository**:  
-
     ```bash
     git clone https://github.com/git-piyush03/lyrical
     cd lyrical
     ```
 
-2. **Install Dependencies**:  
-
-  Requirements: Node 18+ (or 20+), npm
-  Install deps:
-    ```bash
-    npm install
-    ```
+2. **Install Dependencies**:
+      - Requirements: Node 18+ (or 20+), npm
+      - Install deps:
+      <br>
+      
+   ```bash
+   npm install
+   ```
 3.  Create .env (do not commit)
     ```bash
     GEMINI_API_KEY=your_google_gemini_api_key
@@ -73,12 +73,10 @@ Lyrical is an innovative web application built with Flutter that generates lyric
     ```
 5.  **Start the web app:**
     ```bash
-  npm run dev
+     npm run dev
     ```
 6.  Open: http://localhost:5173
-    ```bash
-    flutter pub get
-    ```
+   
 ---
 
 ## Usage  
@@ -95,5 +93,4 @@ Lyrical is an innovative web application built with Flutter that generates lyric
 
 ## API Server  
 
-The Flask server handling API requests for Lyrical is hosted on **Vercel**.  
-This server communicates with the Gemini API to process user inputs and return generated lyrics.  
+The server handling API requests for Lyrical is hosted on **Vercel**. This server communicates with the Gemini API to process user inputs and return generated lyrics.  
